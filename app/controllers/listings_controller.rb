@@ -44,8 +44,9 @@ class ListingsController < ApplicationController
         :bank_account => token
         )
 
+      current_user.recipient = recipient.id
     end
-    current_user.recipient = recipient.id
+
     current_user.save
     
     respond_to do |format|
